@@ -15,43 +15,16 @@ public class MovePlayer {
         this.cir1 = cir1;
 
     }
-    public int getPosition() {
-        return position;
-    }
-
-    public void setPosition(int position) {
-        this.position = position;
-    }
 
     public int getxPos() {
         return xPos;
-    }
-
-    public void setxPos(int xPos) {
-        this.xPos = xPos;
     }
 
     public int getyPos() {
         return yPos;
     }
 
-    public void setyPos(int yPos) {
-        this.yPos = yPos;
-    }
-
-    public int getCir1() {
-        return cir1;
-    }
-
-    public void setCir1(int cir1) {
-        this.cir1 = cir1;
-    }
-
-      Main main = new Main();
-
     public int[]  movePlayer(int playerXPos, int playerYPos, int posCir1, int rand) {
-
-
 
         if (playerXPos == 40 && playerYPos == 40) {
             playerXPos = 40;
@@ -87,7 +60,7 @@ public class MovePlayer {
             intArray[1] = playerYPos;
             intArray[2] = posCir1;
             intArray[3] = rand;
-        return intArray;
+            return intArray;
     }
 
     // New positions of player for Snakes and Ladders
