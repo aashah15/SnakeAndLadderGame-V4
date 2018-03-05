@@ -54,6 +54,9 @@ public class Main extends Application {
     public boolean gameStart = false;
     public Button gameButton;
 
+    public Image img2;
+    public ImageView imageView2;
+
     private Group titleGroup = new Group();
 
     private Parent createContent(){
@@ -197,8 +200,8 @@ public class Main extends Application {
             public void handle(ActionEvent event) {
                 if (!gameStart) {
                     gameStart = true;
-                    randResult.setText("Dice Result");
-                    randResult.setTranslateX(220);
+                    randResult.setText("");
+                    randResult.setTranslateX(160);
                     gameButton.setText("Game Started");
 
                     player1XPos = 40;
@@ -231,7 +234,7 @@ public class Main extends Application {
 
         });
 
-        randResult = new Label("Dice Result");
+        randResult = new Label("");
         randResult.setTranslateX(230);
         randResult.setTranslateY(830);
 
@@ -239,12 +242,19 @@ public class Main extends Application {
         gameResult.setTranslateX(490);
         gameResult.setTranslateY(830);
 
-        Image img = new Image("snakebg.jpeg");
+        Image img = new Image("/sample/res/snakebg.jpeg");
         ImageView imageView = new ImageView();
         imageView.setImage(img);
         imageView.setFitWidth(800);
         imageView.setFitHeight(800);
-        titleGroup.getChildren().addAll(imageView,player1, player2, button1, button2, gameButton, randResult, gameResult);
+
+        imageView2 = new ImageView();
+        img2 = new Image("/sample/res/icon.png");
+        imageView2.setImage(img2);
+        imageView2.setX(230);
+        imageView2.setY(815);
+
+        titleGroup.getChildren().addAll(imageView,imageView2, player1, player2, button1, button2, gameButton, randResult, gameResult);
 
         return root;
 
@@ -252,6 +262,37 @@ public class Main extends Application {
 
     public void getDiceValue(){
         rand = (int)(Math.random() * 6 +1);
+
+        if(rand == 1){
+
+            img2 = new Image("/sample/res/d1.gif");
+            imageView2.setImage(img2);
+        }
+        if(rand == 2){
+
+            img2 = new Image("/sample/res/d2.gif");
+            imageView2.setImage(img2);
+        }
+        if(rand == 3){
+
+            img2 = new Image("/sample/res/d3.gif");
+            imageView2.setImage(img2);
+        }
+        if(rand == 4){
+
+            img2 = new Image("/sample/res/d4.gif");
+            imageView2.setImage(img2);
+        }
+        if(rand == 5){
+
+            img2 = new Image("/sample/res/d5.gif");
+            imageView2.setImage(img2);
+        }
+        if(rand == 6){
+
+            img2 = new Image("/sample/res/d6.gif");
+            imageView2.setImage(img2);
+        }
     }
 
 
